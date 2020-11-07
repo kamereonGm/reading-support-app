@@ -1,0 +1,241 @@
+/* posts/---------------*/
+.title{
+  color:#33231f;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1em;
+  max-height: 2em;
+  -webkit-line-clamp:2;
+}
+
+$pc: 1200px; // PC
+$tab: 992px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (min-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (min-width: ($sp)) {
+    @content;
+  }
+}
+
+
+/* posts/index---------------*/
+.fc-sun{
+  color: red;
+}
+.fc-sat{
+  color: blue;
+}
+.fc-time{
+   display : none;
+}
+
+.finish-count p{
+  float: right;
+  padding-left:2px;
+  padding-right: 2px;
+}
+.to-read{
+  border: solid 3px #e8b4a2;
+  background-color: white;
+  h3{
+    color: #33231f;
+    background-color: #e8b4a2;
+    padding:8px 8px;
+    font-size: 13px;
+    @include sp{
+      font-size: 20px;
+    }
+
+
+  }
+  .to-read-contents{
+    width: 25%;
+  }
+      .img-box{
+        width: 100%;
+        padding-top:142.8%;
+        position: relative;
+        padding-left: 0px;
+        padding-right:0px;
+      }
+      .img{
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+      }
+}
+/* posts/show---------------*/
+.show-icon {
+  h2,h3{
+    padding:10px 5px 10px 5px;
+    border-bottom: solid 2px #c0c0c0;
+    margin-bottom: 0px;
+    font-size: 20px;
+    @include tab{
+      font-size: 25px;
+    }
+  }
+  textarea{
+    display: block;
+    margin:10px auto;
+    width:80%;
+    height: 120px;
+    border-bottom: solid 2px #c0c0c0;
+    @include tab {
+      width: 70%;
+      height:60px;
+    }
+  }
+  .show-image{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 2px #c0c0c0;
+    text-align: center;
+  }
+  .img-thumbnail{
+    width: 40%;
+    @include tab {
+      width: 20%;
+    }
+  }
+  .bottom-1,.bottom-2{
+    font-size: 20px;
+    display: inline-block;
+    border-radius : 20%;
+    text-align: center;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #c0c0c0;
+    border:none;
+    transition: .3s;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+  .bottom-1{
+    margin-left: 10%;
+    @include sp{
+      margin-left: 20%;
+    }
+  }
+  .bottom-2{
+    margin-right: 10%;
+    @include sp{
+      margin-right: 20%;
+    }
+  }
+}
+
+/* posts/shelf---------------*/
+.main-posts-shelf{
+  .container-fluid{
+    padding:0 0 0 0;
+    @include sp{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+.shelves-list{
+  margin:0 auto;
+}
+
+.shelves-icon{
+  border: 1px solid black;
+  padding: 0 1px;
+  width:25%;
+  @include sp{
+    width: 20%;
+  }
+  @include tab{
+    width: 16.6%;
+  }
+
+  .title{
+    font-size: 12px;
+  }
+  .img-box{
+    width: 100%;
+    padding-top:142.8%;
+    position: relative;
+    padding-left: 0px;
+    padding-right:0px;
+  }
+  .img{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+  }
+}
+
+/* posts/search---------------*/
+.main-posts-search{
+  h1,h2{
+    font-size:20px;
+    background-color: #e8b4a2;
+    padding: 3px 0 3px 3px;
+    @include tab{
+      font-size: 25px;
+    }
+  }
+}
+
+
+.bottom{
+  border-radius : 20%;
+}
+
+.books-search{
+  margin:7px 0;
+}
+
+.books-list{
+  margin:5px 0;
+  border-top: solid 1px #c0c0c0;
+  border-bottom: solid 1px #c0c0c0;
+}
+
+/* posts/search_books-list---------------*/
+.books-icon{
+  border-bottom: solid 1px #c0c0c0;
+  .button_to{
+    border-radius: 10px;
+    float:right;
+  }
+  .img-area{
+    width:25%;
+    @include sp{
+      width:20%;
+    }
+    @include tab{
+      width:15%;
+    }
+  }
+  .img-box{
+    width: 100%;
+    padding-top:142.8%;
+    position: relative;
+  }
+  .book-image{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+  }
+}

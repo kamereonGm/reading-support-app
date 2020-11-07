@@ -1,0 +1,23 @@
+<div class="main-posts-show">
+      <div class="show-icon">
+        <h2 ><%= @shelf.title %></h2>
+        <div class="show-image">
+          <%= image_tag(@shelf.image_url, class: "img-thumbnail")%>
+        </div>
+        <h3>著者/&nbsp;<%= @shelf.author %></h3>
+          <h3>comment</h3>
+          <div class="commentarea">
+          <%= form_tag("/posts/comment/#{@shelf.id}") do %>
+            <textarea name="content"><%= @shelf.content %></textarea>
+            <%if @shelf.status %>
+              <input class="bottom-1 " type="submit" name="cancel" value="積みなおす">
+              <input class="bottom-2 float-right" type="submit" name="update" value="変更">
+            <% else %>
+              <input class="bottom-1" type="submit" name="destroy" value="削除">
+              <input class="bottom-2 float-right" type="submit" name="finish" value="読了">
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
+</div>

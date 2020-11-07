@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    attributes:
+      shelf:
+        title: タイトル
+        author: 著者
+        content: コメント
+      user:
+        name: ユーザー名
+        email: メールアドレス
+        password: パスワード

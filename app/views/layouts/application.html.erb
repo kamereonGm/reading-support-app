@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Read1App</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="header-logo">
+        <%= link_to("ReadingApp","/posts/index")%>
+      </div>
+      <div class="header-menu">
+        <% if @current_user %>
+          <%= link_to("ログアウト","/logout",{method: :post})%>
+          <%= link_to("設定","")%>
+        <% else %>
+          <%= link_to("ログイン","/login")%>
+        <% end %>
+      </div>
+    </header>
+    <div class="container-fluid">
+      <% if @current_user %>
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="main-container-fluid">
+              <%= yield %>
+            </div>
+          </div>
+          <div class="col-lg-3  order-lg-first">
+            <div class="navigation sub-container">
+              <ul class="nav flex-lg-column nav-pills">
+                <%= link_to("本棚","/posts/shelf",class:"nav-item text-center")%>
+                <%= link_to("本を追加","/posts/search",class:"nav-item text-center")%>
+                <%= link_to("TL","/posts/timeline",class:"nav-item text-center")%>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="main-container-fluid">
+          <%=yield%>
+        </div>
+      <% end %>
+
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<div class="main-timeline">
+    <% @posts.each do |post| %>
+      <div class="media border p-1 p-md-2">
+        <div class="img-area">
+          <div class="img-box">
+            <%= image_tag(post.image_url, class:"img img-thumbnail")%>
+          </div>
+        </div>
+        <div class="media-body">
+          <h3><%=post.title%></h3>
+          <p class="post-content text-wrap">おかあさんのかあさあこんあせｊふぁｊしえｇじょあえｓｋごあさえｋごあもいっしょうにかおじょあじょえこｇそじゃん<%=post.content%></p>
+          <p class="post-at text-muted">読了<span><%=time_ago_in_words(post.updated_at)%>前</span></p>
+          <p class="post-user text-muted">by&nbsp;<%= @current_user.name %></p>
+          <%if post.user_id == @current_user.id%>
+          <%=link_to("編集","/posts/shelf/#{post.id}",class:"text-muted")%>
+          <%end%>
+        </div>
+      </div>
+    <% end %>
+
+</div>

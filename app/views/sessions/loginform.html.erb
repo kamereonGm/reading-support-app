@@ -1,0 +1,52 @@
+<div class="main-home">
+  <div class="container">
+    <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+    <% end %>
+    <div class="login-form mt-3">
+      <ul class = "nav nav-tabs">
+        <li class = "nav-item">
+          <a class = "nav-link active text-dark" href = "#content1" data-toggle = "tab">ログイン</a>
+        </li>
+        <li class = "nav-item">
+          <a class = "nav-link text-dark" href = "#content2" data-toggle = "tab">登録がまだの方</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="form tab-pane active" id = "content1">
+          <% if @error_message %>
+            <div class="form-error">
+              ※<%= @error_message %>
+            </div>
+          <% end %>
+          <%= form_tag("/users/signup") do%>
+            <p>e-mail</p>
+            <input  name="email" value="<%= @email %>">
+            <p>パスワード</p>
+            <input  name="password" value="<%= @password %>" type="password">
+            <input class="button" type="submit" value="ログイン">
+          <% end %>
+        </div>
+        <div class="form tab-pane" id = "content2">
+          <% @user.errors.full_messages.each do |message| %>
+           <div class="form-error">
+             ※<%= message %>
+           </div>
+          <% end %>
+          <%= form_tag("/users/create") do%>
+            <p>ユーザー名</p>
+            <input  name="name" value="<%= @user.name %>">
+            <p>e-mail</p>
+            <input  name="email" value="<%= @user.email %>" type="email">
+            <p>パスワード</p>
+            <input  name="password" value="<%= @user.password %>" type="password">
+            <input class="button" type="submit" value="新規登録">
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

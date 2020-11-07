@@ -1,0 +1,35 @@
+<div class="main-posts-search">
+  <div class="container">
+      <h1>本を登録する</h1>
+      <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      手動で入力する
+      </button>
+      <div class="collapse" id="collapseExample">
+        <div class="border p-3">
+          <% @shelf.errors.full_messages.each do |message| %>
+           <div class="form-error">
+             <%= message %>
+           </div>
+         <% end %>
+          <%= form_tag("/posts/create") do %>
+            <p>タイトル</p>
+            <input name="book_name">
+            <p>著者</p>
+            <input name="book_author">
+            <input type="submit" value="本棚に追加">
+          <% end %>
+        </div>
+      </div>
+      <div class="books-search">
+      <%= form_tag("/posts/search") do %>
+        <input name="content" value="<%=params[:content]%>"></input>
+        <input type="submit" class="bottom" value="検索">
+      <% end %>
+    </div>
+    <h2>検索結果</h2>
+    <div class="books-list">
+      <%= render partial: "books-list" %>
+    </div>
+
+  </div>
+</div>

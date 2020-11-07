@@ -1,0 +1,26 @@
+<% if @books.present? %>
+  <div class="list">
+  <% @books.first(50).each do |book| %>
+      <div class="books-icon media">
+        <% if book.large_image_url == "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/noimage_01.gif?_ex=200x200"
+          book_image = "/shelf_images/default1.png"
+        else
+          book_image = book.large_image_url
+        end %>
+        <div class="img-area">
+          <div class="img-box">
+            <%= image_tag(book_image, class:"book-image img-thumbnail") %>
+          </div>
+        </div>
+        <div class="media-body">
+          <p class="title text-wrap"><%= book.title %></p>
+          <p class="author text-wrap">著者/<%= book.author %></p>
+          <%= button_to "本棚に追加",
+          {controller: "posts", action: "create"},
+          {params: {book_name: book.title,book_author: book.author,book_image: book_image}}
+          %>
+        </div>
+      </div>
+  <% end %>
+  </div>
+<% end %>

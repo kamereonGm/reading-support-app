@@ -1,0 +1,18 @@
+<div class="main-posts-shelf">
+  <div class="container-fluid">
+    <div class="shelves-list d-flex flex-wrap flex-row">
+      <% @shelves.each do |shelf|%>
+        <div class= "shelves-icon img-thumbnail">
+          <%= link_to "/posts/shelf/#{shelf.id}" do %>
+            <div class="img-box">
+              <%= image_tag(shelf.image_url, class:"img img-thumbnail")%>
+            </div>
+            <p class="title text-wrap"><%= shelf.title%></p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>

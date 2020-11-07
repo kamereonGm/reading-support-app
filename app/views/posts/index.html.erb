@@ -1,0 +1,25 @@
+
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+      <% end %>
+      <div class="finish-count">
+        <p class="">今月:&nbsp;<%=@today_month_finish%>冊</p>
+        <p class="">今年:&nbsp;<%=@today_year_finish%>冊</p>
+        <p class="">総読破数:&nbsp;<%=@ever_finish%>冊</p>
+      </div>
+      <div class="mt-3" id="calendar"></div>
+      <div class="to-read my-3">
+        <h3>今日はこの本を読んでみましょう</h3>
+        <div class="d-flex flex-wrap justify-content-around">
+          <% @shelves_read.each do |shelf_read|%>
+            <div class="to-read-contents  img-thumbnail">
+              <%= link_to "/posts/shelf/#{shelf_read.id}" do %>
+                <div class="img-box">
+                  <%= image_tag(shelf_read.image_url,class:"img img-thumbnail")%>
+                </div>
+                <p class="title text-wrap"><%= shelf_read.title%></p>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>

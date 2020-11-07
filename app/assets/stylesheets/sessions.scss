@@ -1,0 +1,50 @@
+$pc: 1200px; // PC
+$tab: 992px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (min-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (min-width: ($sp)) {
+    @content;
+  }
+}
+
+
+
+
+.login-form{
+  p{
+    padding: 5px 0;
+    border-bottom: solid thin;
+    border-color: #c0c0c0;
+    color: #999999;
+    font-weight: 300;
+    font-size: 20px;
+  }
+  input{
+    display: block;
+    border: none;
+    width: 400px;
+    border-radius: 10px;
+    outline: none;
+    padding: 2px 8px;
+  }
+  .button{
+    float:right;
+    width: 100px;
+    margin-top: 10px;
+    margin-right: 20px;
+    @include tab {
+    margin-right: 80px;
+    }
+  }
+}
