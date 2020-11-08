@@ -31,6 +31,7 @@ class SessionsController < ApplicationController
       @error_message = "メールアドレスまたはパスワードが間違っています"
       @email = params[:email]
       @password = params[:password]
+      @user = User.new
       render("/sessions/loginform")
     end
   end
@@ -38,6 +39,6 @@ class SessionsController < ApplicationController
   def logout
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
-    redirect_to("/users/login")
+    render("/users/login")
   end
 end
