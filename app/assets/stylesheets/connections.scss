@@ -1,26 +1,6 @@
-$pc: 1200px; // PC
-$tab: 992px; // タブレット
-$sp: 480px;  // スマホ
+@import "variables";
 
-@mixin pc {
-  @media (min-width: ($pc)) {
-    @content;
-  }
-}
-@mixin tab {
-  @media (min-width: ($tab)) {
-    @content;
-  }
-}
-@mixin sp {
-  @media (min-width: ($sp)) {
-    @content;
-  }
-}
-
-
-
-
+/* posts/timeline---------------*/
 .main-timeline{
   h3{
     color:#33231f;
@@ -40,7 +20,7 @@ $sp: 480px;  // スマホ
   }
   .media-body{
     margin-left: 4px;
-    height: auto;
+    height: 100%;
   }
   .post-content{
     padding-left:5%;
@@ -57,7 +37,6 @@ $sp: 480px;  // スマホ
   .post-at,.post-user{
     margin-bottom: 0px;
     float:right;
-
     bottom:0;
   }
 

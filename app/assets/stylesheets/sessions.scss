@@ -1,25 +1,4 @@
-$pc: 1200px; // PC
-$tab: 992px; // タブレット
-$sp: 480px;  // スマホ
-
-@mixin pc {
-  @media (min-width: ($pc)) {
-    @content;
-  }
-}
-@mixin tab {
-  @media (min-width: ($tab)) {
-    @content;
-  }
-}
-@mixin sp {
-  @media (min-width: ($sp)) {
-    @content;
-  }
-}
-
-
-
+@import "variables";
 
 .login-form{
   p{

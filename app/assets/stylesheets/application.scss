@@ -15,32 +15,15 @@
  *= require fullcalendar
  */
 @import "bootstrap";
-
-$pc: 1200px; // PC
-$tab: 992px; // タブレット
-$sp: 480px;  // スマホ
-
-@mixin pc {
-  @media (min-width: ($pc)) {
-    @content;
-  }
-}
-@mixin tab {
-  @media (min-width: ($tab)) {
-    @content;
-  }
-}
-@mixin sp {
-  @media (min-width: ($sp)) {
-    @content;
-  }
-}
+@import "variables";
 
 
 /*base------------------------*/
 a:hover{
   text-decoration: none;
 }
+
+/*header------------------------*/
 header{
   background-color: #E07A5F;
   width: 100%;
@@ -77,6 +60,8 @@ header{
     display: table;
   }
 }
+
+/*body------------------------*/
 html,body{height: 100%; background-color: #F4F1DE;}
 .container-fluid,.row {height: 100%;}
 

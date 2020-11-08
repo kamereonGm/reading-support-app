@@ -1,4 +1,6 @@
 /* posts/---------------*/
+@import "variables";
+
 .title{
   color:#33231f;
   margin-top: 0.3rem;
@@ -10,27 +12,6 @@
   max-height: 2em;
   -webkit-line-clamp:2;
 }
-
-$pc: 1200px; // PC
-$tab: 992px; // タブレット
-$sp: 480px;  // スマホ
-
-@mixin pc {
-  @media (min-width: ($pc)) {
-    @content;
-  }
-}
-@mixin tab {
-  @media (min-width: ($tab)) {
-    @content;
-  }
-}
-@mixin sp {
-  @media (min-width: ($sp)) {
-    @content;
-  }
-}
-
 
 /* posts/index---------------*/
 .fc-sun{
