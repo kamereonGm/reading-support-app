@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    if params[:book_image]
+    if params[:book_image].nil?
       params[:book_image] = "/shelf_images/default1.png"
     end
     @shelf = Shelf.new(
